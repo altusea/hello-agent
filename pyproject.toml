@@ -5,21 +5,26 @@ description = "LLM agent playground"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+  "httpx[socks]>=0.28.1",
   "litellm>=1.79.3",
   "openai>=2.7.2",
   "python-dotenv>=1.2.1",
-  "ruff>=0.14.4",
+  "ruff>=0.14.4"
+]
+
+[tool.build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm.build]
+package-dir = "ulib"
+
+[tool.pyrefly]
+project-includes = [
+  "**/*.py",
+  "**/*.ipynb",
 ]
 
 [tool.uv]
 python-preference = "managed"
 prerelease = "allow"
-
-[tool.uv.build-backend]
-module-name = "ulib"
-
-[tool.pyrefly]
-project-includes = [
-    "**/*.py",
-    "**/*.ipynb",
-]
