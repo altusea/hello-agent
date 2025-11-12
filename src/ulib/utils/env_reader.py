@@ -1,10 +1,20 @@
 import dotenv
 
 
+def read_serpapi_key():
+    """Read SerpApi API key from .env file in home directory."""
+    return read_dot_env_val("SERPAPI_API_KEY")
+
+
 def read_deepseek_api_key():
     """Read DeepSeek API key from .env file in home directory."""
+    return read_dot_env_val("DEEPSEEK_API_KEY")
+
+
+def read_dot_env_val(key: str) -> str | None:
+    """Read a value from .env file in home directory."""
     file_path = dotenv.find_dotenv(usecwd=True)
-    return dotenv.dotenv_values(file_path).get("DEEPSEEK_API_KEY")
+    return dotenv.dotenv_values(file_path).get(key)
 
 
 if __name__ == "__main__":
