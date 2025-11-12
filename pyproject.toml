@@ -5,6 +5,8 @@ description = "LLM agent playground"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+  "openai>=2.7.2",
+  "python-dotenv>=1.2.1",
   "ruff>=0.14.4",
 ]
 
@@ -14,3 +16,9 @@ prerelease = "allow"
 
 [tool.uv.build-backend]
 module-name = "ulib"
+
+[tool.pyrefly]
+project-includes = [
+    "**/*.py",
+    "**/*.ipynb",
+]
