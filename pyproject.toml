@@ -1,0 +1,16 @@
+[project]
+name = "hello-agent"
+version = "0.1.0"
+description = "LLM agent playground"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+  "ruff>=0.14.4",
+]
+
+[tool.uv]
+python-preference = "managed"
+prerelease = "allow"
+
+[tool.uv.build-backend]
+module-name = "ulib"
